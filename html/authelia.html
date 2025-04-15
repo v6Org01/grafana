@@ -2,25 +2,37 @@
 <html>
 <head>
   <style>
-    html, body {
+    html {
+      box-sizing: border-box; /* Include padding/border in element's total width/height */
+      height: 100%;          /* Crucial */
+      overflow: hidden;      /* Prevent scrollbars on the html element */
+    }
+    *, *:before, *:after {
+      box-sizing: inherit;
+    }
+
+    body {
       margin: 0;
       padding: 0;
-      height: 100%;
+      height: 100%;          /* Make body fill the html element */
       background-color: #171b1f;
-      overflow: hidden;
+      overflow: hidden;      /* Prevent scrollbars on the body element */
       font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
       color: white;
+      display: flex;         /* Use flexbox on body directly */
     }
 
     .container {
-      height: 100%;
+      /* height: 100%; Let the body's flex handle this */
+      width: 100%;           /* Make container take full width */
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
-      transform: translateY(-10%);
+      /* transform: translateY(-10%); Remove for simplicity first */
       gap: 8px;
+      margin: auto; /* Center block in flex container (body) */
     }
 
     h3 {
@@ -42,4 +54,3 @@
   </div>
 </body>
 </html>
-
